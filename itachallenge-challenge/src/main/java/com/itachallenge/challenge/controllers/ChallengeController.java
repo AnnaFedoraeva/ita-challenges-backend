@@ -1,4 +1,4 @@
-package com.itachallenge.challenge.controller;
+package com.itachallenge.challenge.controllers;
 
 
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,4 +1,4 @@
-package com.itachallenge.challenge.controller;
+package com.itachallenge.challenge.controllers;
 
 import org.junit.jupiter.api.Test;
 
