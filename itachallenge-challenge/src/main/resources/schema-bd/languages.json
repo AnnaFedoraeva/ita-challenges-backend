@@ -1,0 +1,8 @@
+{
+  "id_language": "int",
+  "language_name": "name",
+  "id_challenge":[
+    "uuid",
+    "etc"
+  ]
+}
