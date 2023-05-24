@@ -39,7 +39,7 @@ public class DtoDocumentMapper {
     username, percentage, popularity NO se almacenan en nuestra BD
     Se puede dejar en null/0 o poder valores de "mentirijilla"
      */
-    public ChallengeDto  toDtoWithOnlyBasic(ChallengeI challengeDoc,
+    public ChallengeDto toDtoWithOnlyBasic(ChallengeI challengeDoc,
                                            @Nullable String username, float percentage, int popularity){
 
         return toDtoBuilder.startMappingToDtos(challengeDoc)
