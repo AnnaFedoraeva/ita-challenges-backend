@@ -1,52 +1,34 @@
 package com.itachallenge.challenge.dtos;
 
-import com.itachallenge.challenge.documents.ChallengeI;
-import com.itachallenge.challenge.documents.DetailI;
-import com.itachallenge.challenge.documents.LanguageI;
-import com.itachallenge.challenge.documents.SolutionI;
+import lombok.Builder;
+import lombok.Setter;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+@Builder
+@Setter
 public class ChallengeDto {
 
+    private UUID id_challenge;
+    private ChallengeBasicDto basicInfo;
+    private DetailDto detail;
+    private List<SolutionDto> solutions;
+    private Set<UUID> relateds;
+    private List<ResourceDto> resources;
+
+    public ChallengeDto() {
+    }
 
     public UUID getId_challenge() {
         return null;
     }
 
+    /////////////////////////////////////////////
     //basic info
-    public String getLevel() {
-        return null;
-    }
 
-    public String getChallenge_title() {
-        return null;
-    }
-
-
-    public Set<LanguageI> getLanguages() {
-        return null;
-    }
-
-    public String getUsername(){
-        return null;
-    }
-
-
-    //0.3325 ->  "33,25 %"
-    public String getPercentage(){
-        return null;
-    }
-
-    public int getPopularity(){
-        return 0;
-    }
-
-
-    public LocalDate getCreation_date() {
+    public ChallengeBasicDto getBasicDetails(){
         return null;
     }
 
@@ -54,30 +36,35 @@ public class ChallengeDto {
 ////////////////////////////////////////////
 
 
-    public DetailI getDetail() {
+    public DetailDto getDetail() {
         return null;
     }
 
     ///////////////////////////////////
 
-    @Override
-    public List<SolutionI> getSolutions() {
+
+    public List<SolutionDto> getSolutions() {
         return null;
     }
 
-    @Override
+    ////////////////////////////////////
+
+
     public Set<UUID> getRelateds() {
         return null;
     }
 
-    @Override
-    public Set<UUID> getTags() {
+
+
+    //////////////////////////////
+
+    public List<ResourceDto> getResources() {
         return null;
     }
-    /*
 
+    ////////////////////////////////
 
-
-
-     */
+    public void setRelateds(Set<UUID> relateds) {
+        this.relateds = relateds;
+    }
 }
