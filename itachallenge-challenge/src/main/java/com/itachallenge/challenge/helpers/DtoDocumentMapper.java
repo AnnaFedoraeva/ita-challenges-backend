@@ -24,7 +24,7 @@ public class DtoDocumentMapper {
                                   @Nullable String username, float percentage, int popularity,
                                   List<ResourceDto> resources){
 
-        return customMappingToDtos(challengeDoc)
+        return startMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .addDetailDto()
                 .addSolutionsDto()
@@ -42,7 +42,7 @@ public class DtoDocumentMapper {
     public ChallengeDto toDtoWithOnlyBasic(ChallengeI challengeDoc,
                                            @Nullable String username, float percentage, int popularity){
 
-        return customMappingToDtos(challengeDoc)
+        return startMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .buildChallengeDto();
     }
@@ -51,7 +51,7 @@ public class DtoDocumentMapper {
     Haciendo sobrecárga de este método (y del llamado) se
     puede adaptar el mapeo a dtos partiendo del documento que queramos de entrada.
      */
-    public ToDtoBuilder customMappingToDtos(ChallengeI challengeDoc){
+    public ToDtoBuilder startMappingToDtos(ChallengeI challengeDoc){
         return toDtoBuilder.startMappingToDtos(challengeDoc);
     }
 }

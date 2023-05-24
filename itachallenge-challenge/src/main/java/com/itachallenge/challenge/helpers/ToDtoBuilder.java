@@ -31,7 +31,7 @@ class ToDtoBuilder {
 
     //args: info not stored in our DB
     public ToDtoBuilder addBasicInfoDto(String username, float percentage, int popularity){
-        challengeBasicDto = toChallengeBasicDto(challengeDoc, username, percentage, popularity);
+        challengeBasicDto = toChallengeBasicDto(username, percentage, popularity);
         return this;
     }
 
@@ -73,8 +73,8 @@ class ToDtoBuilder {
     //en cualquier momento, si es necesario pasar de un document Xdoc a un Ydto (sin
     //mapear necesitar mapear el challenge al completo): se puede poner el método necesario como public
 
-    private ChallengeBasicDto toChallengeBasicDto(ChallengeI challengeDoc, String username,
-                                                         float percentage, int popularity){
+    private ChallengeBasicDto toChallengeBasicDto(String username,float percentage, int popularity){
+
         return ChallengeBasicDto.builder()
                 .level(challengeDoc.getLevel())
                 .title(challengeDoc.getChallenge_title())
