@@ -52,6 +52,7 @@ public class DtoDocumentMapper {
     puede adaptar el mapeo a dtos partiendo del documento que queramos de entrada.
      */
     public ToDtoBuilder startMappingToDtos(ChallengeI challengeDoc){
+        toDtoBuilder.reset();
         return toDtoBuilder.startMappingToDtos(challengeDoc);
     }
 }

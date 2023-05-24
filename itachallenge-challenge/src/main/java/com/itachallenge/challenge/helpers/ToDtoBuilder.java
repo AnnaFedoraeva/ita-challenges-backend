@@ -24,6 +24,15 @@ class ToDtoBuilder {
     ToDtoBuilder() {
     }
 
+    public void reset(){
+        challengeDoc = null;
+        challengeBasicDto = null;
+        detailDto = null;
+        solutionsDto = null;
+        relateds = null;
+        resourcesDto = null;
+    }
+
     public ToDtoBuilder startMappingToDtos(ChallengeI challengeDoc) {
         this.challengeDoc = challengeDoc;
         return this;
