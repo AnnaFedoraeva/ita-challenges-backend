@@ -18,9 +18,7 @@ public interface ChallengeI {
     String getLevel(); //valor seteado fom properties
     String getChallenge_title();
     Set<LanguageI> getLanguages(); //@DBRef
-    //do not forget username in dto
-    //do not foget % in dto
-    //do not forget popularity in dto
+
     /*
     Esquema de las fechas:
     Tanto en BD, como en documents, como en dtos:
