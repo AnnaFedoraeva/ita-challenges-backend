@@ -24,13 +24,15 @@ public class DtoDocumentMapper {
                                   @Nullable String username, float percentage, int popularity,
                                   List<ResourceDto> resources){
 
-        return startMappingToDtos(challengeDoc)
+        ChallengeDto challengeDto = startMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .addDetailDto()
                 .addSolutionsDto()
                 .addRelateds()
                 .addResourcesDto(resources)
                 .buildChallengeDto();
+        toDtoBuilder.clean();
+        return challengeDto;
     }
 
 
@@ -42,9 +44,11 @@ public class DtoDocumentMapper {
     public ChallengeDto toDtoWithOnlyBasic(ChallengeI challengeDoc,
                                            @Nullable String username, float percentage, int popularity){
 
-        return startMappingToDtos(challengeDoc)
+        ChallengeDto challengeDto = startMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .buildChallengeDto();
+        toDtoBuilder.clean();
+        return challengeDto;
     }
 
     /*
@@ -52,7 +56,6 @@ public class DtoDocumentMapper {
     puede adaptar el mapeo a dtos partiendo del documento que queramos de entrada.
      */
     public ToDtoBuilder startMappingToDtos(ChallengeI challengeDoc){
-        toDtoBuilder.reset();
         return toDtoBuilder.startMappingToDtos(challengeDoc);
     }
 }

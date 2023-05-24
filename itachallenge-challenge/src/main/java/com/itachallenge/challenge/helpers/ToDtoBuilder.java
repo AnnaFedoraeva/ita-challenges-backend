@@ -2,7 +2,6 @@ package com.itachallenge.challenge.helpers;
 
 import com.itachallenge.challenge.documents.*;
 import com.itachallenge.challenge.dtos.*;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
@@ -22,15 +21,6 @@ class ToDtoBuilder {
 
     //no args constructor con visibilidad de paquete
     ToDtoBuilder() {
-    }
-
-    public void reset(){
-        challengeDoc = null;
-        challengeBasicDto = null;
-        detailDto = null;
-        solutionsDto = null;
-        relateds = null;
-        resourcesDto = null;
     }
 
     public ToDtoBuilder startMappingToDtos(ChallengeI challengeDoc) {
@@ -76,11 +66,22 @@ class ToDtoBuilder {
                 .build();
     }
 
+    //IMPORTANTE: el cliente tiene que llamar a este método una vez haya obtenido el dto deseado.
+    public void clean(){
+        challengeDoc = null;
+        challengeBasicDto = null;
+        detailDto = null;
+        solutionsDto = null;
+        relateds = null;
+        resourcesDto = null;
+    }
+
     //Se podrían añadir otros métodos, como buildSolutionsDto() etc...
 
 
     //en cualquier momento, si es necesario pasar de un document Xdoc a un Ydto (sin
     //mapear necesitar mapear el challenge al completo): se puede poner el método necesario como public
+
 
     private ChallengeBasicDto toChallengeBasicDto(String username,float percentage, int popularity){
 
