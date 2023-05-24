@@ -24,6 +24,7 @@ public class DtoDocumentMapper {
                                   @Nullable String username, float percentage, int popularity,
                                   List<ResourceDto> resources){
 
+        return startMappingToDtos(challengeDoc)
         return customMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .addDetailDto()
@@ -42,7 +43,7 @@ public class DtoDocumentMapper {
     public ChallengeDto toDtoWithOnlyBasic(ChallengeI challengeDoc,
                                            @Nullable String username, float percentage, int popularity){
 
-        return customMappingToDtos(challengeDoc)
+        return toDtoBuilder.startMappingToDtos(challengeDoc)
                 .addBasicInfoDto(username,percentage,popularity)
                 .buildChallengeDto();
     }
