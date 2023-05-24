@@ -6,9 +6,9 @@ import com.itachallenge.challenge.dtos.ChallengeBasicDto;
 import com.itachallenge.challenge.dtos.ChallengeDto;
 import com.itachallenge.challenge.dtos.ResourceDto;
 import com.itachallenge.challenge.dtos.SolutionDto;
+import org.springframework.lang.Nullable;
 
 import java.util.List;
-import java.util.UUID;
 
 public class DtoDocumentMaper implements DtoDocumentMapperI{
 
@@ -24,17 +24,22 @@ public class DtoDocumentMaper implements DtoDocumentMapperI{
         return null;
     }
 
-    @Override
-    public ChallengeDto toDtoWithOnlyBasic(ChallengeI document) {
+
+    public ChallengeDto toDtoWithOnlyBasic(ChallengeI document,@Nullable String username
+                        ,float percentage, int popularity) {
         //init basic dto
 
         ChallengeBasicDto basic = ChallengeBasicDto.builder()
-                .challenge_title(document.getChallenge_title())
-                //TODO ADD MORE
+                .level(document.getLevel())
+                .title(document.getChallenge_title())
+                .technologies(document.getLanguages())
+                .username(username)
+                .percentage(percentage)
+                .popularity(popularity)
+                .creationDate(document.getCreation_date())
                 .build();
 
-        return ChallengeDto.builder()
-                .id_challenge(document.getId_challenge())
+        return ChallengeDto.builder(document.getId_challenge())
                 .basicInfo(basic)
                 .build();
     }

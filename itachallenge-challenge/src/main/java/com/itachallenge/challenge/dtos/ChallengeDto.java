@@ -1,70 +1,101 @@
 package com.itachallenge.challenge.dtos;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.Builder;
-import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-@Builder
-@Setter
+@Getter
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+//ONLY IMPLEMENTED FOR DESERIALIZATION.
+//TODO: IMPLEMENT FOR SERIALIZATION WHEN NEEDED
 public class ChallengeDto {
 
-    private UUID id_challenge;
+    @JsonProperty("id_challenge")
+    private UUID challengeId;
+
+    @JsonUnwrapped
     private ChallengeBasicDto basicInfo;
+
+    @JsonProperty("details")
     private DetailDto detail;
+
     private List<SolutionDto> solutions;
-    private Set<UUID> relateds;
+
+    @JsonProperty("related")
+    private Set<UUID> relateds; //uuids, para no embeber un(os) ChallengeDto (bucle casi infinito)
+
     private List<ResourceDto> resources;
 
-    public ChallengeDto() {
+    //PRIVATE: to force instantiation with custom builder
+    private ChallengeDto(UUID challengeId) {
+        this.challengeId = challengeId;
     }
 
-    public UUID getId_challenge() {
-        return null;
+    public static ChallengeDtoBuilder builder(UUID challengeId){
+        return new ChallengeDtoBuilder(challengeId);
     }
 
-    /////////////////////////////////////////////
-    //basic info
+    public static class ChallengeDtoBuilder{
+        private ChallengeDto challenge;
 
-    public ChallengeBasicDto getBasicDetails(){
-        return null;
+        public ChallengeDtoBuilder(UUID id) {
+            this.challenge = new ChallengeDto(id);
+        }
+
+        public ChallengeDtoBuilder basicInfo(ChallengeBasicDto basicInfo){
+            challenge.setBasicInfo(basicInfo);
+            return this;
+        }
+
+        public ChallengeDtoBuilder detail(DetailDto detail){
+            challenge.setDetail(detail);
+            return this;
+        }
+
+        public ChallengeDtoBuilder solutions(List<SolutionDto> solutions){
+            challenge.setSolutions(solutions);
+            return this;
+        }
+
+        public ChallengeDtoBuilder relateds(Set<UUID> relateds){
+            challenge.setRelateds(relateds);
+            return this;
+        }
+
+        public ChallengeDtoBuilder resources(List<ResourceDto> resources){
+            challenge.setResources(resources);
+            return this;
+        }
+
+        public ChallengeDto build(){
+            return challenge;
+        }
     }
 
-    //end basic info
-////////////////////////////////////////////
-
-
-    public DetailDto getDetail() {
-        return null;
+    private void setBasicInfo(ChallengeBasicDto basicInfo) {
+        this.basicInfo = basicInfo;
     }
 
-    ///////////////////////////////////
-
-
-    public List<SolutionDto> getSolutions() {
-        return null;
+    private void setDetail(DetailDto detail) {
+        this.detail = detail;
     }
 
-    ////////////////////////////////////
-
-
-    public Set<UUID> getRelateds() {
-        return null;
+    private void setSolutions(List<SolutionDto> solutions) {
+        this.solutions = solutions;
     }
 
-
-
-    //////////////////////////////
-
-    public List<ResourceDto> getResources() {
-        return null;
-    }
-
-    ////////////////////////////////
-
-    public void setRelateds(Set<UUID> relateds) {
+    private void setRelateds(Set<UUID> relateds) {
         this.relateds = relateds;
+    }
+
+    private void setResources(List<ResourceDto> resources) {
+        this.resources = resources;
     }
 }

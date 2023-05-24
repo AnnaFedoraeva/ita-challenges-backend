@@ -1,23 +1,28 @@
 package com.itachallenge.challenge.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.itachallenge.challenge.documents.DetailI;
 import com.itachallenge.challenge.documents.ExampleI;
+import lombok.Getter;
 
 import java.util.List;
 
+//ONLY IMPLEMENTED FOR DESERIALIZATION.
+//TODO: IMPLEMENT FOR SERIALIZATION WHEN NEEDED
+@Getter
 public class DetailDto{
 
-    public String getDescription() {
-        return null;
-    }
+    private String description;
 
+    private List<ExampleDto> examples;
 
-    public List<ExampleDto> getExamples() {
-        return null;
-    }
+    @JsonProperty("notes")
+    private String note;
 
-
-    public String getNote() {
-        return null;
+    //use in mapping from document
+    public DetailDto(String description, List<ExampleDto> examples, String note) {
+        this.description = description;
+        this.examples = examples;
+        this.note = note;
     }
 }
