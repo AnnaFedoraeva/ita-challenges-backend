@@ -1,0 +1,32 @@
+{
+  "id_challenge": "uuid",
+  "challenge_title": "challenge name",
+  "level": "level",
+  "creation_date": "date with format YYYY-MM-D",
+  "details": {
+    "description": "text",
+    "examples": [
+      {
+        "id_example": "uuid",
+        "example_text": "text"
+      }
+    ],
+    "notes": "text"
+  },
+  "languages": [
+    "int",
+    "others..."
+  ],
+  "solutions": [
+    "uuid",
+    "others..."
+  ],
+  "tags": [
+    "uuid",
+    "others..."
+  ],
+  "related": [
+    "uuid",
+    "others..."
+  ]
+}
