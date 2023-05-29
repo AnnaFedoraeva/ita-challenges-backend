@@ -6,7 +6,7 @@ import lombok.Getter;
 //ONLY IMPLEMENTED FOR DESERIALIZATION.
 //TODO: IMPLEMENT FOR SERIALIZATION WHEN NEEDED
 @Getter
-public class TechnologyDto {
+public class LanguageDto {
 
     @JsonProperty("id_language")
     private int technologyId;
@@ -14,7 +14,7 @@ public class TechnologyDto {
     private String technology;
 
     //use in mapping from document
-    public TechnologyDto(int technologyId, String technologyName) {
+    public LanguageDto(int technologyId, String technologyName) {
         this.technologyId = technologyId;
         this.technology = technologyName;
     }

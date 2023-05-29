@@ -27,13 +27,13 @@ public class Challenge{
 
     private String challenge_title;
 
-    private Set<LanguageI> languages;
+    private Set<Language> languages;
 
     private LocalDate creation_date;
 
-    private DetailI detail;
+    private Detail detail;
 
-    private List<SolutionI> solutions;
+    private List<Solution> solutions;
 
     private Set<UUID> relateds;
 
