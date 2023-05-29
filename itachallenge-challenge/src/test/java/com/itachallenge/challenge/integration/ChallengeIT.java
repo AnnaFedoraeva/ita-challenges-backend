@@ -1,7 +1,6 @@
 package com.itachallenge.challenge.integration;
 
 import com.itachallenge.challenge.controller.ChallengeController;
-import com.itachallenge.challenge.helper.ResourceHelper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,14 +19,16 @@ public class ChallengeIT {
     @Autowired
     private WebTestClient webTestClient;
 
-    private ResourceHelper resourceHelper = new ResourceHelper();
-
     private final String RESULT1 = "$.results[0].";
 
     /*
+    //Segun feature#6 implementada por Alfonso
+    //DB Not mocked yet, debido a que endpoint actual tira de data dummy
+
     @GetMapping(value = "/getAllChallenges", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<String> getAllChallenges()
     }
+    /
     */
     //@Test //TODO: enable once feature#6 included in develop
     @DisplayName("GET all challenges IT")
