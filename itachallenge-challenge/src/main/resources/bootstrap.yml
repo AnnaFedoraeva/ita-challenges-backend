@@ -5,7 +5,7 @@ spring:
     consul:
       enabled: true
       host: 172.24.2.0 #IP del agente consul
-      port: 8500       #puerto HTTP del agente
+      port: 8300       #puerto HTTP del agente
       config:
         enabled: true
       discovery:

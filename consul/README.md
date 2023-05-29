@@ -49,7 +49,7 @@ docker pull consul
 
 - Arrancar cluster consul (desde directorio raíz)
 ```
-docker compose -f consul/docker-compose.yml up --remove-orphans consul-server1 consul-server2 consul-server3
+docker compose -f consul/docker-compose.yml up -d --remove-orphans consul-server1 consul-server2 consul-server3
 ```
 
 - http://localhost:8500 debe mostrar consola de Administración Consul 

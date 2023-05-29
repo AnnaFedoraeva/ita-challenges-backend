@@ -41,6 +41,10 @@ dependencies {
     testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
 
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-config:4.0.2'
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery:4.0.2'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-bootstrap', version: '4.0.2'
+
 
 }
 
