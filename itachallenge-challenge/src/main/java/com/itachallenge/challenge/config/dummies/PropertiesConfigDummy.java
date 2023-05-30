@@ -6,13 +6,18 @@ import org.springframework.stereotype.Component;
 @Component //There's none bean declaration -> it's not a @Configuration
 //Setters NOT needed. Values injected anyway (tested + ok)
 public class PropertiesConfigDummy implements PropertiesConfigTeam {
+    public String loadFiltersData() {
+        return null;
+    }
 
-    @Override
+    public String loadSortData() {
+        return null;
+    }
+
     public Integer getConnectionTimeout() {
         return null;
     }
 
-    @Override
     public Integer getMaxBytesInMemory() {
         return null;
     }

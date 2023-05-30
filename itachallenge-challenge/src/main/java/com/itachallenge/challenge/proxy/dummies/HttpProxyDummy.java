@@ -14,7 +14,6 @@ public class HttpProxyDummy implements HttpProxyTeam {
 
     }
 
-    @Override
     public <T> Mono<T> getRequestData(String url, Class<T> clazz) {
         return null;
     }
