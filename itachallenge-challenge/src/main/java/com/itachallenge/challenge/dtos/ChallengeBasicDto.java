@@ -15,6 +15,8 @@ import java.util.Set;
 //TODO: IMPLEMENT FOR SERIALIZATION WHEN NEEDED
 public class ChallengeBasicDto {
 
+    //TODO: Languages"" + CallengeBasicInfoDto
+
     private String level;
 
     @JsonProperty("challenge_title")

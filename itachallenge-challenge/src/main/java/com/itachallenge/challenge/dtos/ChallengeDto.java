@@ -17,6 +17,8 @@ import java.util.UUID;
 //TODO: IMPLEMENT FOR SERIALIZATION WHEN NEEDED
 public class ChallengeDto {
 
+    //TODO relatedChallenges  !!!!
+
     @JsonProperty("id_challenge")
     private UUID challengeId;
 
