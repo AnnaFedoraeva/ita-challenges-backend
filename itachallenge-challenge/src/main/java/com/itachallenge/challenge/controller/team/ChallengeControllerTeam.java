@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 /*
 Considerar clases Team como un sitio donde poder poner comentarios
@@ -14,7 +15,6 @@ NO usar en desarrollo (usar el dummy)
  */
 
 @RestController
-@RequestMapping(value = "/itachallenge/api/v1/challenge")
 public abstract class ChallengeControllerTeam {
 
     /*
@@ -23,13 +23,18 @@ public abstract class ChallengeControllerTeam {
     protected static final Logger log = LoggerFactory.getLogger(ChallengeControllerTeam.class);
 
     /*
-    Implementado por jonatan para hacer pruebas
-    Status: ON DEVELOP
+    Se ha solicitado en PR poder poner los paths como atributos public final.
+    Así no hay que hacer copy paste de los paths en los tests.
      */
-    @Operation(summary = "Testing the App")
-    @GetMapping(value = "/test")
-    public String test(){
-        log.info("** Saludos desde el logger **");
-        return "Hello from ITA Challenge!!!";
-    };
+
+
+    /*
+    Status: PR
+    updating path
+     */
+    public abstract String test();
+
+    public abstract Mono<String> getChallengesFilters();
+
+    public abstract Mono<String> getChallengesSortInfo();
 }
