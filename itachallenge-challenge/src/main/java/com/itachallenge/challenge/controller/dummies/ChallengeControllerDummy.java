@@ -1,4 +1,4 @@
-package com.itachallenge.challenge.controller.dummy;
+package com.itachallenge.challenge.controller.dummies;
 
 import com.itachallenge.challenge.controller.team.ChallengeControllerTeam;
 
