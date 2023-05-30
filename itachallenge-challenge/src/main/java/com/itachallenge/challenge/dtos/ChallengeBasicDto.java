@@ -23,7 +23,7 @@ public class ChallengeBasicDto {
     private String title;
 
     @JsonProperty("languages")
-    private Set<LanguageDto> technologies;
+    private Set<LanguageDto> languages;
 
     @JsonSerialize(using = PercentageSerializer.class)
     private Float percentage; //TODO: refactor field name once we know what exactly represents
@@ -32,16 +32,17 @@ public class ChallengeBasicDto {
 
     @JsonProperty("creation_date")
     //de momento se pasa la fecha como YYYY-MM-DD. Si FE no lo sabe convertir lo implementaremos nosotros
+    //import org.apache.commons.lang3.time.DateUtils;
     //TODO: fix data-challenges.json
     private LocalDate creationDate;
 
     //PRIVATE NO ARGS CONSTRUCTOR: to force instantiation with @Builder
-    private ChallengeBasicDto(String level, String title, Set<LanguageDto> technologies,
+    private ChallengeBasicDto(String level, String title, Set<LanguageDto> languages,
                               float percentage, int popularity, LocalDate creationDate) {
 
         this.level = level;
         this.title = title;
-        this.technologies = technologies;
+        this.languages = languages;
         this.percentage = percentage;
         this.popularity = popularity;
         this.creationDate = creationDate;

@@ -3,9 +3,7 @@ package com.itachallenge.challenge.dtos;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
@@ -66,8 +64,8 @@ public class ChallengeDto {
             return this;
         }
 
-        public ChallengeDtoBuilder relateds(Set<UUID> relateds){
-            challenge.setRelateds(relateds);
+        public ChallengeDtoBuilder relatedChallenges(Set<UUID> relatedChallenges){
+            challenge.setRelatedChallenges(relatedChallenges);
             return this;
         }
 
@@ -93,8 +91,8 @@ public class ChallengeDto {
         this.solutions = solutions;
     }
 
-    private void setRelateds(Set<UUID> relateds) {
-        this.relateds = relateds;
+    private void setRelatedChallenges(Set<UUID> relatedChallenges) {
+        this.relatedChallenges = relatedChallenges;
     }
 
     private void setResources(List<ResourceDto> resources) {

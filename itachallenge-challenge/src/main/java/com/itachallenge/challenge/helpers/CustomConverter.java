@@ -37,7 +37,7 @@ public class CustomConverter implements DtoDocumentMapper, FromChallengeDocMappe
                 .basicInfo(fromChallengeToChallengeBasicDto(percentage,popularity))
                 .detail(fromDetailToDetailDto(challengeDoc.getDetail()))
                 .solutions(challengeDoc.getSolutions().stream().map(this::fromSolutionToSolutionDto).toList())
-                .relateds(challengeDoc.getRelateds())
+                .relatedChallenges(challengeDoc.getRelateds())
                 .resources(resourcesDtos)
                 .build();
     }
@@ -46,7 +46,7 @@ public class CustomConverter implements DtoDocumentMapper, FromChallengeDocMappe
         return ChallengeBasicDto.builder()
                 .level(challengeDoc.getLevel())
                 .title(challengeDoc.getChallenge_title())
-                .technologies(challengeDoc.getLanguages().stream()
+                .languages(challengeDoc.getLanguages().stream()
                         .map(this::fromLanguageToLanguageDto).collect(Collectors.toSet()))
                 .percentage(percentage)
                 .popularity(popularity)
