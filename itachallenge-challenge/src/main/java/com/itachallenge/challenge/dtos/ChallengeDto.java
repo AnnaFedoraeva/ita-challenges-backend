@@ -29,7 +29,7 @@ public class ChallengeDto {
     private List<SolutionDto> solutions;
 
     @JsonProperty("related")
-    private Set<UUID> relateds; //uuids, para no embeber un(os) ChallengeDto (bucle casi infinito)
+    private Set<UUID> relatedChallenges; //uuids, para no embeber un(os) ChallengeDto (bucle casi infinito)
 
     private List<ResourceDto> resources;
 
