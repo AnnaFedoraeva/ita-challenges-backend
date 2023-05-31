@@ -30,6 +30,9 @@ public interface DatesSpecifications {
 
     "lo que ha dicho para la entrada"
     usar Entrada: DateUtils or SimpleDateFormat
+
+    Link recomendado por jonatan para comparar dates:
+    https://mkyong.com/java/how-to-compare-dates-in-java/
      */
 
     /*
