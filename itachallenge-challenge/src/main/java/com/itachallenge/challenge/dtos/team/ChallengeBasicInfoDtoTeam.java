@@ -37,6 +37,7 @@ public interface ChallengeBasicInfoDtoTeam {
 
     Integer getPopularity();
 
+    //TODO: modificar la clase devuelta
     LocalDate getCreationDate();
 
     /*

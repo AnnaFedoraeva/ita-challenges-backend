@@ -12,5 +12,5 @@ public interface LanguageDtoTeam {
 
     int getLanguageId();
 
-    String getName();
+    String getLanguageName();
 }

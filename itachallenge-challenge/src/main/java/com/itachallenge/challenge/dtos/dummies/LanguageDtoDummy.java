@@ -12,7 +12,7 @@ public class LanguageDtoDummy implements LanguageDtoTeam {
         return 0;
     }
 
-    public String getName() {
+    public String getLanguageName() {
         return null;
     }
 }
