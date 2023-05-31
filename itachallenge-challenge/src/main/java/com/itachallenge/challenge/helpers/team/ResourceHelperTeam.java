@@ -31,7 +31,7 @@ public interface ResourceHelperTeam {
     String readResourceAsString ()  throws IOException;
 
     /*
-    Estado: doing
+    Estado: en PR
     QUÉ: lee el resource y lo mapea a un objeto de la clase indicada
     IMPORTANTE:
         tambien accepta que se quiere un array (ej: MyClass[].class)
