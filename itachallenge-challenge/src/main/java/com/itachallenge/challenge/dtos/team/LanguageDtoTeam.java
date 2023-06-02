@@ -8,7 +8,12 @@ serializar/deserializar a/des de jsons la data asociada al lenguage de programac
  */
 public interface LanguageDtoTeam {
 
-    //all args constructor
+    //public all args constructor
+
+    /*
+    private no args constructor. Implementado para el test de la deserializacion
+    de momento no es necesario usarlo/que sea public
+     */
 
     int getLanguageId();
 
