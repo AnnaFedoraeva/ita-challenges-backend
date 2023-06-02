@@ -15,7 +15,5 @@ public interface LanguageDtoTeam {
     de momento no es necesario usarlo/que sea public
      */
 
-    int getLanguageId();
-
-    String getLanguageName();
+    //getters and setters no implementados de momento
 }
