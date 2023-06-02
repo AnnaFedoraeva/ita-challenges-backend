@@ -4,6 +4,7 @@ import com.itachallenge.challenge.dtos.team.ChallengeBasicInfoDtoTeam;
 import com.itachallenge.challenge.dtos.team.LanguageDtoTeam;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 public class ChallengeBasicInfoDtoDummy implements ChallengeBasicInfoDtoTeam {
@@ -32,7 +33,7 @@ public class ChallengeBasicInfoDtoDummy implements ChallengeBasicInfoDtoTeam {
         return null;
     }
 
-    public LocalDate getCreationDate() {
+    public Date getCreationDate() {
         return null;
     }
 

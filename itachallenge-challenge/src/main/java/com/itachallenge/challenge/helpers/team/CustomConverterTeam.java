@@ -150,6 +150,14 @@ Y, si quisiera, puedo ofrecer un menú de primeros distinto a cada cliente.
 Y, según qué primero pida el cliente, le ofrezco un ménu de segundos u otro
 (e incluso podría variar según el cliente).
 
+Menú <-> Interfaces
+Cocinero que que puede cocinar cualquier plato de cualquier menú <-> CustomConverter (implementa interfaces)
+Los clientes NO hablan con el cocinero, solo seleccionan platos de los menús que yo (el programador) les doy.
+Menú de primeros (el que tienen los clientes) <-> StarterConverter
+    De momento con un solo plato (from Challenge document)
+De momento solo un menú de segundos (al elegir challenge document como primero) <-> ChallengeDocConverter
+    De momento con un solo plato (toChallengeDtoWithOnlyBasicInfo)
+
 Y, tiene varias ventajas:
 Muy flexible y adaptable. Se puede extender la funcionalidad "bajo demanda", sin que afecte lo ya codificado.
 Aunque haya N interfaces, no hay que picar codigo extra ni hay que hacer tests para ellas.

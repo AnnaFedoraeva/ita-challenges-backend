@@ -1,6 +1,7 @@
 package com.itachallenge.challenge.dtos.team;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 /*
@@ -37,8 +38,14 @@ public interface ChallengeBasicInfoDtoTeam {
 
     Integer getPopularity();
 
-    //TODO: modificar la clase devuelta
-    LocalDate getCreationDate();
+    /*
+    TODO: importante, tipo Date provisional
+    atributo creation date está dando problemas debido
+    al tema de UTC.
+    Seria recomendable ignorar este atributo en los dummies,
+    al menos hasta que se encuentre una solución viable
+     */
+    Date getCreationDate();
 
     /*
     setters privados, ya que ninguna clase lo necesita (de momento)
