@@ -24,13 +24,15 @@ public interface ChallengeDtoTeam {
     -> instanciar según builder
      */
 
+    /*
+    private no args constructor, para la deserializacion
+     */
+
     static ChallengeDtoBuilderTeam builder(UUID challengeId){
         return null; // para que compile
     }
 
-    UUID getChallengeId();
 
-    ChallengeBasicInfoDtoTeam getBasicInfo();
 
     /*
     resto de campos y dtos están hechos
@@ -38,12 +40,14 @@ public interface ChallengeDtoTeam {
     se irán añadiendo bajo demanda
      */
 
-    /*
-    setters privados, ya que ninguna clase lo necesita (de momento)
-     */
 
     //clase interna que implementa el builder
     interface ChallengeDtoBuilderTeam{
         //implementa un builder standard que solo requiere empezar con el id
     }
+
+    /*
+    setters i getters no implementados (no necesarios para la deserializacion/serialización)
+    incluir "on demand"
+     */
 }
