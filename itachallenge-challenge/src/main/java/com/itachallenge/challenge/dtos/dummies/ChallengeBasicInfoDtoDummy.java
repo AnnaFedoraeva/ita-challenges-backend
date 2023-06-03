@@ -13,30 +13,6 @@ public class ChallengeBasicInfoDtoDummy implements ChallengeBasicInfoDtoTeam {
         return null;
     }
 
-    public String getLevel() {
-        return null;
-    }
-
-    public String getTitle() {
-        return null;
-    }
-
-    public Set<LanguageDtoTeam> getLanguages() {
-        return null;
-    }
-
-    public Float getPercentage() {
-        return null;
-    }
-
-    public Integer getPopularity() {
-        return null;
-    }
-
-    public Date getCreationDate() {
-        return null;
-    }
-
     public static class ChallengeBasicInfoDtoBuilderDummy implements ChallengeBasicInfoDtoBuilderTeam{
 
     }
