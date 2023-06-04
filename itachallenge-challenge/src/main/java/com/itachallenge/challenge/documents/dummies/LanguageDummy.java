@@ -9,7 +9,7 @@ import java.util.UUID;
 //@Document(collection="challenges")
 public class LanguageDummy implements LanguageTeam {
 
-    public int getLanguageId() {
+    public int getIdLanguage() {
         return 0;
     }
 
@@ -17,7 +17,7 @@ public class LanguageDummy implements LanguageTeam {
         return null;
     }
 
-    public Set<UUID> getIdsChallenges() {
+    public Set<UUID> getIdChallenges() {
         return null;
     }
 }

@@ -14,16 +14,14 @@ responsabilidad: obvia
 public interface ChallengeTeam {
 
     /*
-    Extra info needed:
-    Constructores??
-    Setters??
+    all args constructor
      */
 
     /*
     doing
     method name provisional?
      */
-    UUID getChallengeId();
+    UUID getUuid();
 
     /*
     doing

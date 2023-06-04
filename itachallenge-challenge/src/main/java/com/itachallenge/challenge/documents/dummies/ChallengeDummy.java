@@ -9,7 +9,7 @@ import java.util.UUID;
 
 //@Document(collection="challenges")
 public class ChallengeDummy implements ChallengeTeam {
-    public UUID getChallengeId() {
+    public UUID getUuid() {
         return null;
     }
 

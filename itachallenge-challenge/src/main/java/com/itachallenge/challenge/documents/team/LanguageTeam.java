@@ -11,16 +11,14 @@ responsabilidad: obvia
 public interface LanguageTeam {
 
     /*
-    Extra info needed:
-    Constructores??
-    Setters??
+    all args constructor
      */
 
     /*
     doing
     method name provisional?
      */
-    int getLanguageId();
+    int getIdLanguage();
 
     /*
     doing
@@ -32,5 +30,5 @@ public interface LanguageTeam {
     doing
     method name provisional?
      */
-    Set<UUID> getIdsChallenges();
+    Set<UUID> getIdChallenges();
 }
